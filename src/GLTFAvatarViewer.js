@@ -81,7 +81,7 @@ Viewer.prototype.init = function(canvas) {
 
     
     // this.renderer.setSize( this.canvas.width, this.canvas.height ); // test
-    this.camera = new THREE.PerspectiveCamera( 45, this.canvas.width / this.canvas.height, 0.01, 100 );
+    this.camera = new THREE.PerspectiveCamera( 45, this.canvas.width / this.canvas.height, 0.01, 10000 );
 
     this.renderer.setPixelRatio(window.devicePixelRatio);
     // this.renderer.setPixelRatio(this.canvas.width / this.canvas.height);
@@ -246,7 +246,9 @@ Viewer.prototype.selectSkin = function(type, key, uri) {
     if (!uri) {
         // skin from repo
         uri = glAvatarSystem.repo[type][key];
+       
     }
+   
 
     // var uri = glAvatarSystem.repo[type][key];
 
@@ -255,8 +257,8 @@ Viewer.prototype.selectSkin = function(type, key, uri) {
         this.skinOnload(type, key, glAvatarSystem.accessories[type][key].gltf);
     } else {
         var self = this;
-        this.loader.setGlAvatarOfLinkingSkeleton(this.gltf_skeleton.gl_avatar);
-        this.loader.load( uri, function(data, json, bins, imgs) {
+        this.loader.setGlAvatarOfLinkingSkeleton(this.gltf_skeleton.gl_avatar); //AYAN NEED TO Chnage this.
+        this.loader.load(uri , function(data, json, bins, imgs) {
             // glAvatarSystem.accessories[type][key] = data;
             // console.log(bins);
             // console.log(imgs);
@@ -411,7 +413,7 @@ Viewer.prototype.selectSkeleton = function(key, uri) {
         uri = info.url;
     }
 
-
+    
     
 
 
@@ -465,7 +467,7 @@ Viewer.prototype.selectSkeleton = function(key, uri) {
 
 Viewer.prototype.skeletonOnLoad = function(key, data) {
     var gltf = data;
-
+    
     this.gltf_skeleton = gltf;
 
     glAvatarSystem.curSkeleton.name = key;

@@ -54,13 +54,52 @@
             cursor: pointer
         }
     </style>
+     <link rel="stylesheet" href="./css/styleB.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
   </head>
   <body>
+       
+    <div id="container" style="z-index:0">
+        <!-- <canvas id ="canvas"></canvas> -->
+    </div>
+  
+        <!-- <div class="top-section">
+            <h1>top header part</h1>
+        </div> -->
+        <div class="side-modal">
+            
+            <button type="button" onclick="viewer.mergeAndExport();">Download</button>
+            <button type="button" onclick="viewer.selectSkin('hair', 1,'models/gltf/saber-maid-hair-mixamo/saber-maid-hair.gltf');">Hair1 </button>
+            <button type="button" onclick="viewer.selectSkin('hair',2, 'models/gltf/saber-lily-hair-sub-skeleton/saber-lily-hair-sub-skeleton.gltf');">Hair 2</button>
+            <button type="button" onclick="viewer.selectSkin('clothes', 1,'models/gltf/saber-dress-mixamo/saber-dress.gltf');">Dress 1 </button>
+            <button type="button" onclick="viewer.selectSkin('clothes',2, 'models/gltf/saber-suit/saber-suit.gltf');">Dress 2</button>
+           
+        </div>
+        <div class="side-icon-section">
+            <i class="fa fa-car"></i>
+            <i class="fa fa-car"></i>
+            <i class="fa fa-car"></i>
+            <i class="fa fa-car"></i>
+
+        </div>
+    
+       
+        <a class="button" id="downloadLink" hidden>download</a>
+
+           <!-- <script type="text/javascript" src="app.js"></script> -->
+        <script type="text/javascript" src="build-viewer/AvatarViewer.js"></script>
+
+        <script type="text/javascript">
+        // var viewer = new AvatarViewer();
+        var viewer = new AvatarViewer.Viewer();
+        
+        console.log(AvatarViewer.AvatarSystem);
+        viewer.init(document.getElementById('canvas'));
 
        
-        <div id="container">
-            <!-- <canvas id ="canvas"></canvas> -->
-        </div>
-   <a id="downloadLink" hidden> </a>
-  <script type="text/javascript" src="app.js"></script></body>
+        </script>
+
+
+    </body>
 </html>

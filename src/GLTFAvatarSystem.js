@@ -69,7 +69,7 @@ var glAvatarSystem = {
 
             //     skins: {
             //         hair: 'lily',
-            //         clothes: 'maid-dress'
+            //         clothes: 'maid-dress' models/gltf/saber-mixamo-body-no-face/saber-body-animations.gltf
             //     }
             // },
             'no-face': {

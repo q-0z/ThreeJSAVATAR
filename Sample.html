@@ -53,6 +53,10 @@
             text-decoration: underline;
             cursor: pointer
         }
+        #canvas {
+            width:100% !important;
+            height:100% !important;
+        }
     </style>
   </head>
   <body>
@@ -60,10 +64,11 @@
        
         <div id="container">
             <canvas id ="canvas"></canvas>
+            <!--  style="width:600px;height:800px" -->
         </div>
         
         <a id="downloadLink" hidden>download</a>
-
+        <button type="button" onclick="viewer.mergeAndExport();">Download</button>
         <script type="text/javascript" src="build-viewer/AvatarViewer.js"></script>
 
         <script type="text/javascript">
