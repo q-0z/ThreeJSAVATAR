@@ -1,4 +1,4 @@
-.background{
+/* .background{
     height: auto;
     width: 100%;
     background-color: #000000;
@@ -10,8 +10,8 @@
     bottom: 0px;
     color: white;
     z-index: 10;
-}
-.top-section{
+} */
+/* .top-section{
     border-bottom: 1px solid white;
     width: 100%;
     height: 100px;
@@ -19,8 +19,8 @@
     text-align: center;
     z-index: 10;
     position: relative;
-}
-.side-modal{
+} */
+/* .side-modal{
     width: 20%;
     height: 440px;
     border: 1px solid white;
@@ -30,12 +30,11 @@
     margin-left: 20px;
     z-index: 10;
     position: relative;
-}
-.side-icon-section{
+} */
+/* .side-icon-section{
     float: right;
     display: flex;
     flex-direction: column;
-    /* border: 1px solid white; */
     margin-top: -444px;
     margin-right: 19px;
     height: 300px;
@@ -43,9 +42,9 @@
     text-align: center;
     z-index: 10;
     position: relative;
-}
-.side-icon-section i{
+} */
+/* .side-icon-section i{
     padding-top: 20px;
     z-index: 10;
     position: relative;
-}
+} */

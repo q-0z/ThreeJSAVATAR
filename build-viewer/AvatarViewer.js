@@ -44333,7 +44333,7 @@ function Viewer(preserveDrawingBuffer) {
 
     // this.container = null;
     this.canvas = null;
-    this.fullWindow = true;
+    this.fullWindow = false;
 
     this.skeletonMixer = null;
     this.skinMixers = [];   // animation mixer for skin files
@@ -44369,6 +44369,7 @@ Viewer.prototype.init = function(canvas) {
 
     
     if (canvas) {
+		// alert(1);
         this.canvas = canvas;
         this.fullWindow = false;
         this.renderer = new THREE.WebGLRenderer( 
@@ -44379,16 +44380,20 @@ Viewer.prototype.init = function(canvas) {
             } 
         );
     } else {
+		var cont=document.getElementById('container');
+		
         this.renderer = new THREE.WebGLRenderer( { 
             antialias: true ,
             preserveDrawingBuffer: this.preserveDrawingBuffer
         } );
         this.canvas = this.renderer.domElement;
-        this.fullWindow = true;
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
-        this.renderer.setSize( window.innerWidth, window.innerHeight ); // test
-        document.getElementById('container').appendChild(this.canvas);
+		this.fullWindow = true;
+		
+        this.canvas.width = cont.offsetWidth;
+		this.canvas.height = cont.offsetHeight;
+		//alert(this.canvas.width+":"+this.canvas.height);
+        this.renderer.setSize( cont.offsetWidth, cont.offsetHeight ); // test
+        cont.appendChild(this.canvas);
     }
 
     
@@ -44426,7 +44431,7 @@ Viewer.prototype.init = function(canvas) {
 
 Viewer.prototype.initScene = function () {
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color( 0x222222 );
+    this.scene.background = new THREE.Color( 0x17191b );
 
     this.scene.add(this.camera);
     // test add lights
@@ -44483,7 +44488,8 @@ var onWindowResize = Viewer.prototype.onWindowResize = function() {
     // }
     // renderer.setSize( window.innerWidth, window.innerHeight );
     if (this.fullWindow) {
-        this.renderer.setSize( window.innerWidth, window.innerHeight );
+		//this.renderer.setSize( window.innerWidth, window.innerHeight );
+		this.renderer.setSize(this.canvas.width, this.canvas.height);
     } else {
         this.renderer.setSize(this.canvas.width, this.canvas.height);
     }

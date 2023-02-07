@@ -111,7 +111,7 @@ Viewer.prototype.init = function(canvas) {
 
 Viewer.prototype.initScene = function () {
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color( 0x222222 );
+    this.scene.background = new THREE.Color( 0x121212 );
 
     this.scene.add(this.camera);
     // test add lights
