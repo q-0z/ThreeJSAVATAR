@@ -290,3 +290,17 @@ main .right {
     top: 15%;
     left: 20px;
 }
+
+/* .final-avatar{
+  margin-top: 133px;
+  height: 587px;
+  width: 1360px;
+} */
+.model-viewer{
+    
+  height: 400px;
+  width: 500px;
+  /* border: 2px solid white; */
+  margin-top: 60px;
+  margin-left: 0;
+}

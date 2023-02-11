@@ -29,7 +29,7 @@
             </p>
           </span>
 
-          <button class="sc-gswNZR eBUuBt css-11bntm2" tabindex="0" type="button" onclick="saveAndContinue()">
+          <button class="sc-gswNZR eBUuBt css-11bntm2" tabindex="0" type="button" onclick="continueToFinalPage()">
             Dashboard<span class="MuiTouchRipple-root css-w0pj6f"></span>
           </button>
         </div>
@@ -122,7 +122,7 @@
   console.log(AvatarViewer.AvatarSystem);
   viewer.init();
 
-  // manna
+  // Arindam's work
   function resizeInput(elem) {
   elem.style.width = elem.value.length + "ch";
 }
@@ -147,6 +147,10 @@
     //
     editBtn.style.display="inline";
     saveBtn.style.display="none";
+  }
+  function continueToFinalPage(){
+    location.assign("dashboard.html");
+
   }
 </script>
 

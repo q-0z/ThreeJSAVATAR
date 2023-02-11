@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./dashboardStyle.css" />
+    <style>
+        #container {
+        position: absolute;
+        /* width: 50%;
+        height: 50%; */
+      
+      }
+    </style>
 </head>
 
 <body>
@@ -37,6 +45,12 @@
                     <span class="big">
                         05
                     </span>
+                    <div class="final-avatar">
+                        <div id="container" class="model-viewer">
+                            <a class="button" id="downloadLink" hidden>download</a>                      
+                        </div>
+
+                    </div>
                 </div>
                 <div class="right">
 
@@ -58,11 +72,11 @@
                         </div>
                     </div>
                     <div class="bottom">
-                        <button class="downBtn" style="cursor: pointer;">
+                        <button class="downBtn" style="cursor: pointer;"  onclick="viewer.mergeAndExport()">
                             <span>Download</span>
                         </button>
                         <button class="shareBtn" style="cursor: pointer;">
-                            <span>Download</span>
+                            <span>Share</span>
                         </button>
                         <button class="settingBtn">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -106,5 +120,15 @@
         </main>
     </div>
 </body>
+    <script type="text/javascript" src="build-viewer/AvatarViewer.js"></script>
 
+    <script type="text/javascript">
+    // var viewer = new AvatarViewer();
+    var viewer = new AvatarViewer.Viewer();
+
+    console.log(AvatarViewer.AvatarSystem);
+    viewer.init();
+
+
+    </script>
 </html>
