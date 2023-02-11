@@ -1,113 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>   -->
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./modal.css" /> 
-    <title>preview
-    </title>
-    
-  </head>
-  <body>
-    <div class="background">
-      <div class="top-section">
-        <div class="css-asnci9">
-          <div class=".css-hasgqs">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>   -->
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./modal.css" />
+  <title>preview
+  </title>
+
+</head>
+
+<body>
+  <div class="background">
+    <div class="top-section">
+      <div class="css-asnci9">
+        <div class=".css-hasgqs">
 
 
-            <span style="cursor: pointer"
-              ><svg
-                class="css-vubbuv"
-                focusable="false"
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                data-testid="ArrowBackIosIcon"
-                style="padding-top: 15px"
-                onclick="gotoPrevPage()"
-              >
-                <path
-                  d="M11.67 3.87 9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"
-                ></path>
-              </svg>
-              <p style="margin-top: -30px; margin-left: 25px">
-                Step 4 of 4: Final Preview
-              </p>
-            </span>
+          <span style="cursor: pointer"><svg class="css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
+              data-testid="ArrowBackIosIcon" style="padding-top: 15px" onclick="gotoPrevPage()">
+              <path d="M11.67 3.87 9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"></path>
+            </svg>
+            <p style="margin-top: -30px; margin-left: 25px">
+              Step 4 of 4: Final Preview
+            </p>
+          </span>
 
-            <button
-              class="sc-gswNZR eBUuBt css-11bntm2"
-              tabindex="0"
-              type="button"
-              onclick="saveAndContinue()"
-            >
-              Dashboard<span class="MuiTouchRipple-root css-w0pj6f"></span>
-            </button>
-          </div>
+          <button class="sc-gswNZR eBUuBt css-11bntm2" tabindex="0" type="button" onclick="saveAndContinue()">
+            Dashboard<span class="MuiTouchRipple-root css-w0pj6f"></span>
+          </button>
         </div>
       </div>
-      <div class="preview-page">
-        <h3 class="t1">Avatar Name</h3>
-        <p class="pt1">Jenny Wilson</p>
-        <p class="pt2" id="date"></p>
-        <div class="inner-div-upper"></div>
-        
+    </div>
+    <div class="preview-page">
+      <h3 class="t1">Avatar Name</h3>
+      <div class="edit_avatar_name">
+        <span>
 
-        <div class="side-right"></div>
-        <div class="right-elements">
-            Avatar Details
-        </div>
-        <div class="side-left" id="container">
-          <a class="button" id="downloadLink" hidden>download</a>
-        </div>
-        <div class="x1">
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-        </div>
-        <div class="x2">
-            <span>Copy the link to share in social media</span>
-        </div>
-        <div class="x3">
-            <span>https://3dvectorcreator.me/gallery/665sdf...</span>
-        </div>
-        <button class="downBtn" style="cursor: pointer;" onclick="viewer.mergeAndExport()">
-            <span>Download</span>
+          <!-- <span class="viewName">
+            jenny
+          </span> -->
+          <input type="text" value="Jenny Wilson" onkeyup="resizeInput(this)" readonly>
+        </span>
+        <button class="editBtn" type="button" style="background: transparent; border: none;" onclick="editName()">
+          <!-- <img src="./imgs/edit_icon.png" alt=""style=" height: 20px;"> -->
+          <svg xmlns="http://www.w3.org/2000/svg" style=" height: 20px;" viewBox="0 0 24 24" fill="currentColor"
+            class="w-6 h-6">
+            <path
+              d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z" />
+          </svg>
         </button>
-        <div class="x4">
-            <span>Share with</span>
-        </div>
-        <div class="x5">
-           <a href="https://www.twitter.com" target="_blank"><img src="./3D Vector Creator & Collector/Desktop/Dark Version/Final Preview/Frame 100484.png" alt=""></a>
-           <a href="https://www.whatsapp.com" target="_blank"><img src="./3D Vector Creator & Collector/Desktop/Dark Version/Final Preview/Frame 100485.png" alt=""></a>
-           <a href="https://www.facebook.com" target="_blank"><img src="./3D Vector Creator & Collector/Desktop/Dark Version/Final Preview/Frame 100486.png" alt=""></a>
+        <button class="saveBtn" type="button" style="background: transparent; border: none; display: none;" onclick="saveName()">
+          <!-- <img src="./imgs/edit_icon.png" alt=""style=" height: 20px;"> -->
+          <svg xmlns="http://www.w3.org/2000/svg" style=" height: 20px;" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+        </button>
+      </div>
+      <!-- <p class="pt1">Jenny Wilson</p> -->
+      <p class="pt2" id="date" style="margin-top: -34px;"></p>
+      <div class="inner-div-upper"></div>
 
-        </div>
-  </body>
-  <script type="text/javascript">
-    function gotoPrevPage() {
-      location.assign("index.html");
-    }
 
-    n = new Date();
-    y = n.getFullYear();
-    m = n.getMonth() + 1;
-    d = n.getDate();
-    document.getElementById("date").innerHTML =
-      " Avatar created at " + m + "/" + d + "/" + y;
-  </script>
-  
-  <script type="text/javascript" src="build-viewer/AvatarViewer.js"></script> -->
+      <div class="side-right"></div>
+      <div class="right-elements" style="padding-top: 30px;">
+        Avatar Details
+      </div>
+      <div class="side-left" id="container">
+        <a class="button" id="downloadLink" hidden>download</a>
+      </div>
+      <div class="x1">
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+      </div>
+      <div class="x2">
+        <span>Copy the link to share in social media</span>
+      </div>
+      <div class="x3">
+        <span>https://3dvectorcreator.me/gallery/665sdf...</span>
+      </div>
+      <button class="downBtn" style="cursor: pointer;" onclick="viewer.mergeAndExport()">
+        <span>Download</span>
+      </button>
+      <div class="x4">
+        <span>Share with</span>
+      </div>
+      <div class="x5" style="
+        border: none;
+        background: transparent;
+    ">
+        <a href="https://www.twitter.com" target="_blank"><img
+            src="./3D Vector Creator & Collector/Desktop/Dark Version/Final Preview/Frame 100484.png" alt=""></a>
+        <a href="https://www.whatsapp.com" target="_blank"><img
+            src="./3D Vector Creator & Collector/Desktop/Dark Version/Final Preview/Frame 100485.png" alt=""></a>
+        <a href="https://www.facebook.com" target="_blank"><img
+            src="./3D Vector Creator & Collector/Desktop/Dark Version/Final Preview/Frame 100486.png" alt=""></a>
 
-   <script type="text/javascript">
+      </div>
+</body>
+<script type="text/javascript">
+  function gotoPrevPage() {
+    location.assign("index.html");
+  }
+
+  n = new Date();
+  y = n.getFullYear();
+  m = n.getMonth() + 1;
+  d = n.getDate();
+  document.getElementById("date").innerHTML =
+    " Avatar created at " + m + "/" + d + "/" + y;
+</script>
+
+<script type="text/javascript" src="build-viewer/AvatarViewer.js"></script> -->
+
+<script type="text/javascript">
   // var viewer = new AvatarViewer();
   var viewer = new AvatarViewer.Viewer();
-  
+
   console.log(AvatarViewer.AvatarSystem);
   viewer.init();
-  
-  
-  </script>
-  
-</html>
 
+  // manna
+  function resizeInput(elem) {
+  elem.style.width = elem.value.length + "ch";
+}
+  let input =document.querySelector('.edit_avatar_name input')
+  let editBtn =document.querySelector('.edit_avatar_name .editBtn')
+  let saveBtn =document.querySelector('.edit_avatar_name .saveBtn')
+  resizeInput(input);
+
+  function editName(){
+    input.removeAttribute('readonly')
+    input.focus()
+    let val=input.value;
+    input.value="";
+    input.value=val;
+
+    //
+    saveBtn.style.display="inline";
+    editBtn.style.display="none";
+  }
+  function saveName(){
+    input.setAttribute('readonly',true)
+    //
+    editBtn.style.display="inline";
+    saveBtn.style.display="none";
+  }
+</script>
+
+</html>
