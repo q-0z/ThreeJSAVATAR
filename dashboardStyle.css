@@ -15,6 +15,10 @@ body {
   height: 100vh;
   width: 100vw;
 }
+.background{
+  height: 100%;
+  overflow: auto;
+}
 .settingBtn svg {
   height: 1.25rem;
   width: 1.25rem;
@@ -35,7 +39,8 @@ body {
   border: 1px solid #343a40;
 }
 .top-section {
-  padding: 1.68rem 1.5rem;
+  padding: 0 1.5rem;
+  height: 3.75rem;
   border-bottom: 1px solid #343a40;
   display: flex;
   align-items: center;
@@ -63,7 +68,13 @@ body {
 main {
   display: flex;
   gap: 1.5rem;
-  padding: 2rem;
+  padding: 2rem;height: 100%;
+}
+main .left .top-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
 }
 main .left .top-right .big {
   font-weight: 600;
@@ -88,6 +99,7 @@ main .left .top-right .small {
 }
 main .left {
   height: 40rem;
+  /* width: 80%; */
   width: 70%;
   background: linear-gradient(180deg, #16181a 0%, #212529 100%);
   /* Gray/9 */
@@ -97,10 +109,11 @@ main .left {
   padding: 1.375rem;
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 main .left .top-card .btn {
-  padding: 10px 18px;
+  padding: .625rem 1.125rem;
   border-radius: 60px;
   background: rgba(255, 255, 255, 0.1);
 
@@ -116,10 +129,15 @@ main .left .top-card .btn {
   color: white;
   border: none;
   /* Primary/White */
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 main .left .top-card img {
-  height: 100%;
+  /* height: 100%; */
   margin-right: 1.5rem;
+  width: 30%;
+  flex-shrink: 0;
 }
 
 main .left .top-card .right .av-name {
@@ -140,13 +158,12 @@ main .left .top-card .right .small {
   font-size: 14px;
   line-height: 18px;
 }
-main .left .top-card .right .top {
-  margin-top: 3.25rem;
-}
+
 main .left .top-card .right {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 70%;
 }
 main .left .top-card {
   background: #212529;
@@ -154,26 +171,33 @@ main .left .top-card {
 
   border: 1px solid #343a40;
   border-radius: 16px;
-  width: 491px;
-  height: 240px;
+  width: 100%;
   padding: 0.5rem;
   display: flex;
   gap: 5;
+  align-items: center;
 }
 
 main .left .right {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 40%;
+  position: relative;
+    z-index: 1;
 }
 
 main .left .right .bottom {
   display: flex;
+  justify-content: end;
   gap: 1rem;
+  flex-shrink: 0;
+  width: 100%;
 }
 
 main .left .right .bottom .downBtn {
-  padding: 13px 35px;
+  /* padding: 13px 35px; */
+  padding: .625rem 1.125rem;
   border-radius: 60px;
   background-color: white;
   border: none;
@@ -182,8 +206,13 @@ main .left .right .bottom .downBtn {
   font-size: 18px;
   line-height: 24px;
 }
+main .left .right .bottom .settingBtn {
+  padding: .625rem;
+  flex-shrink: 0;
+}
 main .left .right .bottom .shareBtn {
-  padding: 13px 35px;
+  /* padding: 13px 35px; */
+  padding: .625rem 1.125rem;
   border-radius: 60px;
   background: rgba(255, 255, 255, 0.1);
   border: none;
@@ -197,6 +226,7 @@ main .right {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 30%;
 }
 
 .gameCard {
@@ -212,7 +242,7 @@ main .right {
   gap: 16px;
   isolation: isolate;
 
-  width: 400px;
+  width: 100%;
   height: 288px;
 
   background: linear-gradient(180deg, #16181a 0%, #212529 100%);
@@ -303,4 +333,12 @@ main .right {
   /* border: 2px solid white; */
   margin-top: 60px;
   margin-left: 0;
+}
+
+
+
+
+#container canvas{
+  width: 100% !important;
+  height: 100% !important;
 }

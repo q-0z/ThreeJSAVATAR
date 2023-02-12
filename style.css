@@ -544,23 +544,3 @@ margin-top: 10px;
 .css-uqiymw::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
-.edit_avatar_name{
-    display: flex;
-    align-items: center;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: white;
-    letter-spacing: -0.02em;
-    margin-left: 1rem;
-    margin-top: -1.25rem;
-}
-.edit_avatar_name input{
-    background: transparent;
-    outline: none;
-    border: none;
-    width: fit-content;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: white;
-    letter-spacing: -0.02em;
-}
