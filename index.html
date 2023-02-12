@@ -344,15 +344,15 @@ cursor: pointer;
                 <a href=""><img class="side-img-icon"
                         src="./3D Vector Creator & Collector/Desktop/Dark Version/Create Avatar Step 4/Frame 100508.png"
                         style="height: 44px;width: 44px;margin-top: 10px;float: right;" alt=""></a>
-                <a href=""><img class="side-img-icon"
+                <a><img class="side-img-icon"
                         src="./3D Vector Creator & Collector/Desktop/Dark Version/Create Avatar Step 3/Frame 100486.png"
-                        style="height: 44px;width: 44px;margin-top: 10px;float: right;" alt=""></a>
-                <a href=""><img class="side-img-icon"
+                        style="height: 44px;width: 44px;margin-top: 10px;float: right;cursor: pointer;" alt="" onclick="potraitMode()"></a>
+                <a><img class="side-img-icon"
                         src="./3D Vector Creator & Collector/Desktop/Dark Version/Create Avatar Step 3/Frame 100484.png"
-                        style="height: 44px;width: 44px;margin-top: 10px;float: right;" alt=""></a>
-                <a href=""><img class="side-img-icon"
+                        style="height: 44px;width: 44px;margin-top: 10px;float: right;cursor: pointer;" alt="" onclick="zoomIn()"></a>
+                <a><img class="side-img-icon"
                         src="./3D Vector Creator & Collector/Desktop/Dark Version/Create Avatar Step 3/Frame 100485-1.png"
-                        style="height: 44px;width: 44px;margin-top: 10px;float: right;" alt=""></a>
+                        style="height: 44px;width: 44px;margin-top: 10px;float: right;cursor: pointer;" alt="" onclick="zoomOut()"></a>
             </div>
         </div>
 
@@ -363,20 +363,19 @@ cursor: pointer;
                 <a href=""><img src="./3D Vector Creator & Collector/Desktop/Dark Version/Create Avatar Step 3/Group 3.png" style="margin-bottom:5px;margin-left: 44px;;" alt=""></a>  
             </div>
         </div> -->
-        <div class="idleBtn">
+        <div class="idleBtn" >
             <a href=""><img src="./3D Vector Creator & Collector/Desktop/Dark Version/Create Avatar Step 3/Group 4.png" style="margin-top:6px" alt=""></a>  
             <span style="
             margin-left: .5rem;
             margin-right: 2rem;
-            ">
-                Idle
+            "  id="textDivId">Idle
             </span> 
-                <span class="arrow_icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" style="height: 1.5rem;" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <span class="arrow_icon" onclick="textSliderLeftArrow()">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="height: 1.5rem;" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" >
                         <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-                      </svg>
+                    </svg>
                 </span>
-                <span class="arrow_icon">
+                <span class="arrow_icon" onclick="textSliderRightArrow()">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
@@ -398,7 +397,59 @@ cursor: pointer;
     console.log(AvatarViewer.AvatarSystem);
     viewer.init();
 
+    function zoomIn(){
+        viewer.camera.fov -= 5;
+        viewer.camera.updateProjectionMatrix();
+        //alert(1);
+    }
 
+    function zoomOut(){
+        viewer.camera.fov += 5;
+        viewer.camera.updateProjectionMatrix();
+        //alert(1);
+    }
+
+    function potraitMode(){
+        viewer.camera.position.set(0,5,0);
+        viewer.camera.rotation.set(0,0,0);
+        viewer.camera.fov -= 20;
+        viewer.camera.updateProjectionMatrix();
+        //alert(1);
+    }
+
+     var i = 0;
+     function textSliderRightArrow(){
+        // alert("right arrow")
+        var x = document.getElementById("textDivId");
+        if(i == 0){
+        // alert('abc');
+            i++;
+           x.innerHTML = "Walking";  
+           viewer.playAnimation(2);        
+        }else if(i == 1){
+            i++;
+            x.innerHTML = "Yawning";
+            viewer.playAnimation(3);
+        }
+     }
+     function textSliderLeftArrow(){
+        var x = document.getElementById("textDivId");
+        if(i == 1){
+            i--;
+           x.innerHTML = "idle";  
+           viewer.playAnimation(0);        
+        }else if(i == 2){
+            i--;
+            x.innerHTML = "Walking";
+            viewer.playAnimation(2);
+        }
+        // else if(i == 2){
+        //     i--;
+        //     x.innerHTML = "Yawning";
+        //     viewer.playAnimation(3);
+        // }
+
+     }
 </script>
 
 <script>
@@ -466,6 +517,8 @@ cursor: pointer;
             //make alll the target div to none
         }
     }
+
+    
 </script>
 
 </html>
