@@ -23,8 +23,10 @@ body {
   height: 1.25rem;
   width: 1.25rem;
   color: white;
+  cursor: pointer;
 }
 .settingBtn {
+  cursor: pointer;
   height: 2.75rem;
   width: 2.75rem;
   border-radius: 100%;
@@ -113,6 +115,7 @@ main .left {
 }
 
 main .left .top-card .btn {
+  cursor: pointer;
   padding: .625rem 1.125rem;
   border-radius: 60px;
   background: rgba(255, 255, 255, 0.1);
@@ -202,13 +205,14 @@ main .left .right .bottom .downBtn {
   background-color: white;
   border: none;
   color: black;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 18px;
   line-height: 24px;
 }
 main .left .right .bottom .settingBtn {
   padding: .625rem;
   flex-shrink: 0;
+  cursor: pointer;
 }
 main .left .right .bottom .shareBtn {
   /* padding: 13px 35px; */
@@ -217,7 +221,7 @@ main .left .right .bottom .shareBtn {
   background: rgba(255, 255, 255, 0.1);
   border: none;
   color: white;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 18px;
   line-height: 24px;
 }
@@ -341,4 +345,30 @@ main .right {
 #container canvas{
   width: 100% !important;
   height: 100% !important;
+}
+
+
+.edit_avatar_name{
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  color: white;
+  letter-spacing: -0.02em;
+  /* margin-left: 1rem;
+  margin-top: -1.25rem; */
+}
+.edit_avatar_name input{
+  background: transparent;
+  outline: none;
+  border: none;
+  width: fit-content;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.02em;
+}
+button{
+  cursor: pointer;
 }

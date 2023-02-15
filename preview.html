@@ -16,11 +16,9 @@
 
 <body>
   <div class="background">
-    <div class="top-section"
-    style="
+    <div class="top-section" style="
     position: static;
-    "
-    >
+    ">
       <div class="css-asnci9" style="
       display: flex;
       align-items: center;
@@ -28,13 +26,11 @@
       width: 100%;
       padding-right: 0;
       ">
-        <div class=".css-hasgqs"
-        
-        >
+        <div class=".css-hasgqs">
 
 
           <span style="cursor: pointer"><svg class="css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-              data-testid="ArrowBackIosIcon"  onclick="gotoPrevPage()">
+              data-testid="ArrowBackIosIcon" onclick="gotoPrevPage()">
               <path d="M11.67 3.87 9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"></path>
             </svg>
             <p style="margin-top: -30px; margin-left: 25px">
@@ -43,8 +39,7 @@
           </span>
 
         </div>
-        <button 
-        style="
+        <button style="
         background-color: white !important;
         min-height: 56px;
         border: 1px solid white !important;
@@ -58,8 +53,7 @@
         min-width: 12.5rem;
         height: 100%;
         cursor: pointer;
-        "
-        tabindex="0" type="button" onclick="continueToFinalPage()">
+        " tabindex="0" type="button" onclick="continueToFinalPage()">
           Dashboard<span class="MuiTouchRipple-root css-w0pj6f"></span>
         </button>
       </div>
@@ -194,30 +188,38 @@
               <div class="x3" style="
               position: relative;
               ">
-                <span>https://3dvectorcreator.me/gallery/665sdf...</span>
-                <span style="
-                height: 100%;
-                display: flex;
-                /* margin-right: .5rem; */
-                justify-content: center;
-                position: absolute;
-                top: 0;
-                right: .5rem;
-                align-items: center;
-            " >
-                  <svg xmlns="http://www.w3.org/2000/svg" style="width: 1rem; fill: transparent !important;" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                <span id="linkToCopy">https://3dvectorcreator.me/gallery/665sdf...</span>
+                <button onclick="copy(this)" style="
+                    height: 100%;
+                    display: flex;
+                    /* margin-right: .5rem; */
+                    justify-content: center;
+                    position: absolute;
+                    top: 0;
+                    right: .5rem;
+                    align-items: center;
+                    background: transparent;
+                    border: none;
+                    color: white;
+                ">
+
+                  <svg xmlns="http://www.w3.org/2000/svg" style="width: 1rem; fill: transparent !important;"
+                    class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
-                </span>
+                </button>
               </div>
-              
+
               <button class="downBtn" style="cursor: pointer;" onclick="viewer.mergeAndExport()">
                 <span>Download</span>
                 <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" style="height: 1rem; fill: white !important;" fill="#ffff" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25" />
+                  <svg xmlns="http://www.w3.org/2000/svg" style="height: 1rem; fill: white !important;" fill="#ffff"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25" />
                   </svg>
-                  
+
                 </span>
               </button>
               <div class="x5 grayText" style="
@@ -253,7 +255,7 @@
         </div>
       </div>
     </div>
-    </div>
+  </div>
 </body>
 <script type="text/javascript">
   function gotoPrevPage() {
@@ -306,6 +308,17 @@
   function continueToFinalPage() {
     location.assign("dashboard.html");
 
+  }
+
+
+  function copy(that) {
+    var inp = document.createElement('input');
+    document.body.appendChild(inp)
+    inp.value = document.getElementById('linkToCopy').textContent
+    inp.select();
+    document.execCommand('copy', false);
+    inp.remove();
+    console.log("copied", document.getElementById('linkToCopy').textContent);
   }
 </script>
 
