@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Collection</title>
     <link rel="stylesheet" href="./11_avatar_preview.css" />
     <style>
         #container {
@@ -49,9 +49,10 @@
                             05
                         </span>
                     </div>
-                    <span class="righttext">
+                    <span class="righttext" id="date">
                         Avatar Created at 23 Jan 2023
                     </span>
+                    
 
                 </div>
 
@@ -82,7 +83,7 @@
                     </button>
                 </div>
                 <div class="rightBottom">
-                    <button class="settingBtn">
+                    <!-- <button class="settingBtn">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -90,8 +91,22 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
         
-                    </button>
-                    <button class="settingBtn">
+                    </button> -->
+                    <a><img class="side-img-icon"
+                        src="./3D Vector Creator & Collector/Desktop/Dark Version/Create Avatar Step 3/Frame 100484.png"
+                        style="height: 44px;width: 44px;margin-top: 10px;float: right;cursor: pointer;" alt=""
+                        onclick="zoomIn()"></a>
+
+                    <a><img class="side-img-icon"
+                        src="./3D Vector Creator & Collector/Desktop/Dark Version/Create Avatar Step 3/Frame 100485-1.png"
+                        style="height: 44px;width: 44px;margin-top: 10px;float: right;cursor: pointer;" alt=""
+                        onclick="zoomOut()"></a>
+
+                    <a><img class="side-img-icon"
+                        src="./3D Vector Creator & Collector/Desktop/Dark Version/Avatar Preview/Frame 100486.png"
+                        style="height: 44px;width: 44px;margin-top: 10px;float: right;cursor: pointer;" alt=""
+                        onclick="shareBtn()"></a>        
+                    <!-- <button class="settingBtn">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -99,8 +114,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
         
-                    </button>
-                    <button class="settingBtn">
+                    </button> -->
+                    <!-- <button class="settingBtn">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -108,7 +123,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
         
-                    </button>
+                    </button> -->
                 </div>
             </div>
 
@@ -123,6 +138,22 @@
 
     console.log(AvatarViewer.AvatarSystem);
     viewer.init();
+    //ayan's work on zoom-in and zoom-out in collection page
+    function zoomIn() {
+        if(viewer.camera.fov>=30){
+                    viewer.camera.fov -= 5;
+                    viewer.camera.updateProjectionMatrix();
+                }
+        //alert(1);
+    }
+
+    function zoomOut() {
+        if(viewer.camera.fov<=50){
+                    viewer.camera.fov += 5;
+                    viewer.camera.updateProjectionMatrix();
+                }
+        //alert(1);
+    }
 
     // Arindam's work
     function resizeInput(elem) {
@@ -156,6 +187,12 @@
     }
 
 
+    n = new Date();
+    y = n.getFullYear();
+    m = n.getMonth() + 1;
+    d = n.getDate();
+    document.getElementById("date").innerHTML =
+        " Avatar created at " + m + "/" + d + "/" + y;
 </script>
 
 </html>

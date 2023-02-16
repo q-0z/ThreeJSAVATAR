@@ -44974,6 +44974,24 @@ module.exports = function( THREE ) {
 
 		};
 
+		//ayan works on reset and portrayed work
+		this.set_potrait=function(){
+			pan( 3,120);
+			dollyIn( 2.2 );
+			// console.log("Atpotrait"+scope.object.position);
+			//scope.object.position.set(0.50,1.76,0.5 );
+			
+			scope.update();
+		};
+
+		this.set_reset=function(){
+			// pan( 3,-120);
+			dollyOut( 2.2 );
+			//scope.object.position.set(1.5,2,1.5 );
+			scope.update();
+			
+		};
+
 		// this method is exposed, but perhaps it would be better if we can make it private...
 		this.update = function() {
 
